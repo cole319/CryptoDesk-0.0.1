@@ -1,11 +1,21 @@
-// import React from "react";
-// import logo from "./logo.svg";
-// import { Counter } from "./features/counter/Counter";
-import "./App.css";
+import React from "react";
+
+import { createTheme, ThemeProvider } from "@mui/material";
+import "./index.css";
 import { LoginForm } from "./components/auth/login-form/login-form.component";
 
-function App() {
-  return <LoginForm />;
-}
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
+
+const App = () => {
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <LoginForm />
+    </ThemeProvider>
+  );
+};
 
 export default App;
